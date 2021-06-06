@@ -78,7 +78,12 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validatedData = $request->validate([
+            'category_name' => ['required']
+        ]);
+        Category::whereId($id)->update($validatedData);
+
+        return redirect('/categories')->with('success', 'Category is successfully updated');
     }
 
     /**
