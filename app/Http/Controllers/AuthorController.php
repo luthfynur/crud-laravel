@@ -79,7 +79,13 @@ class AuthorController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validatedData = $request->validate([
+            'firstname' => ['required'],
+            'lastname' => ['required']
+        ]);
+        Author::whereId($id)->update($validatedData);
+
+        return redirect('/authors')->with('success', 'Author is successfully updated');
     }
 
     /**
