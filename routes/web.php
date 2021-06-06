@@ -21,4 +21,4 @@ Route::get('/', function () {
 
 Route::resource('posts', PostsController::class);
 
-Route::resource('categories', CategoryController:class);
+Route::resource('categories', CategoryController::class);
