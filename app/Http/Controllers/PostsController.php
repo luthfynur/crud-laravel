@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Posts;
 
 class PostsController extends Controller
 {
@@ -34,7 +35,15 @@ class PostsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'title' => ['required'],
+            'sub_title' => ['required'],
+            'body' => ['required']
+        ]);
+        
+        $show = Posts::create($validatedData);
+
+        return redirect('/posts')->with('success', 'Post is successfully created'); 
     }
 
     /**

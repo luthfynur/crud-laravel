@@ -27,8 +27,8 @@
               <input type="text" class="form-control" name="title"/>
           </div>
           <div class="form-group">
-              <label for="post-subtitle">Sub Title :</label>
-              <input type="text" class="form-control" name="subtitle"/>
+              <label for="post-sub_title">Sub Title :</label>
+              <input type="text" class="form-control" name="sub_title"/>
           </div>
           <div class="form-group">
               <label for="post-body">Content :</label>
