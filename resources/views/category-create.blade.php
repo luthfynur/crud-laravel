@@ -24,7 +24,7 @@
           <div class="form-group">
               @csrf
               <label for="category-name">Category name:</label>
-              <input type="text" class="form-control" name="name"/>
+              <input type="text" class="form-control" name="category_name"/>
           </div>
           <button type="submit" class="btn btn-primary">Create</button>
       </form>
