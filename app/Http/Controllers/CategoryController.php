@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Category;
 
 class CategoryController extends Controller
 {
@@ -34,7 +35,12 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'category_name' => ['required'],
+        ]);
+        $show = Category::create($validatedData);
+   
+        return redirect('/categories')->with('success', 'Game is successfully saved');
     }
 
     /**
