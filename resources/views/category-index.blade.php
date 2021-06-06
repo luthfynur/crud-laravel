@@ -12,7 +12,7 @@
       {{ session()->get('success') }}  
     </div><br />
   @endif
-  <button style="margin-bottom: 10px" class="btn btn-primary" type="button" onclick="window.location='{{ route('posts.create') }}'">Create Category</button>
+  <button style="margin-bottom: 10px" class="btn btn-primary" type="button" onclick="window.location='{{ route('categories.create') }}'">Create Category</button>
   <table class="table table-striped">
     <thead>
         <tr>
