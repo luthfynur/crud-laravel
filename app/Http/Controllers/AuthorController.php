@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use app\Models\Author;
 
 class AuthorController extends Controller
 {
@@ -34,7 +35,13 @@ class AuthorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'firstname' => ['required'],
+            'lastname' => ['required'],
+        ]);
+        $show = Author::create($validatedData);
+   
+        return redirect('/authors')->with('success', 'Author successfully saved');
     }
 
     /**
