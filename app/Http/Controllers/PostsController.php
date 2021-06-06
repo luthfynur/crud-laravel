@@ -81,7 +81,14 @@ class PostsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validatedData = $request->validate([
+            'title' => ['required'],
+            'sub_title' => ['required'],
+            'body' => ['required']
+        ]);
+        Posts::whereId($id)->update($validatedData);
+
+        return redirect('/posts')->with('success', 'Post is successfully updated');
     }
 
     /**
